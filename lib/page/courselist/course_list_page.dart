@@ -40,8 +40,7 @@ class _CourseListPageState extends State<CourseListPage> {
                 child: ListView.builder(
                   padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
                   itemBuilder: (context, index) {
-                    final courseList =
-                        lecturerInfo?.data[index].courseData ?? [];
+                    final courseList = lecturerInfo?.data[index].courseData ?? [];
 
                     return Card(
                       shape: RoundedRectangleBorder(
@@ -54,18 +53,16 @@ class _CourseListPageState extends State<CourseListPage> {
                       child: custom.ExpansionTile(
                         shape: const Border(),
                         tilePadding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-                        leading: ImageUsecase().imageFromBase64String(
-                            lecturerInfo?.data[index].image ?? ""),
+                        leading: ImageUsecase()
+                            .imageFromBase64String(lecturerInfo?.data[index].image ?? ""),
                         onExpansionChanged: (bool expanded) async {},
                         title: Text(
                           "${lecturerInfo?.data[index].position}",
-                          style:
-                              const TextStyle(fontSize: 16, color: Colors.grey),
+                          style: const TextStyle(fontSize: 16, color: Colors.grey),
                         ),
                         subtitle: Text(
                           "${lecturerInfo?.data[index].name}",
-                          style: const TextStyle(
-                              fontSize: 18, color: Colors.black),
+                          style: const TextStyle(fontSize: 18, color: Colors.black),
                         ),
                         children: [
                           const Divider(
